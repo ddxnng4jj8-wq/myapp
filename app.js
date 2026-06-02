@@ -32,10 +32,8 @@ app.post('/api/messages', async (req, res) => {
   res.json(result.rows[0]);
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log("サーバーが起動しました: http://localhost:${process.env.PORT || 3000}");
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`サーバーが起動しました: http://localhost:${process.env.PORT || 3000}`);
 });
 app.use(express.static('public'));
 app.get('/', (req, res) => {
