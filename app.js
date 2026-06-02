@@ -37,3 +37,11 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("サーバーが起動しました: http://localhost:${process.env.PORT || 3000}");
 });
+app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/chat.html');
+});
+
+app.get('/chat.html', (req, res) => {
+  res.sendFile(__dirname + '/public/chat.html');
+});
